@@ -12,7 +12,7 @@ env:
 jobs:
   terraform:
     name: "Terraform Plan"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
