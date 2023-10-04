@@ -7,11 +7,11 @@ terraform {
     }
   }
 	
-  cloud {
-    organization = "weitest"
+  # cloud {
+  #   organization = "weitest"
 
-    workspaces {
-      name = "testworkspace"
-    }
-  }
+  #   workspaces {
+  #     name = "terraPipeline"
+  #   }
+  # }
 }
