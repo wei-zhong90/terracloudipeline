@@ -5,6 +5,8 @@ import random
 import string
 import re
 
+
+# Change the tags to tags_all
 # Random credentials generator code
 def lambda_handler(event, context):
 
