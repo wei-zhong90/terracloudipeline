@@ -8,11 +8,11 @@ terraform {
   }
 	
   cloud {
-    # organization = "weitest"
+    organization = "weitest"
 
     workspaces {
       project = "myproject"
-      # name = "terraPipeline"
+      name = "terraPipeline"
     }
   }
 }
