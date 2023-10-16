@@ -5,6 +5,7 @@ import random
 import string
 import re
 
+# Random credentials generator code
 def lambda_handler(event, context):
 
     max=8
