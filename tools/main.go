@@ -16,7 +16,7 @@ var (
 
 const (
 	// workspaceName string = "test-cli-workspace"
-	// token         string = "EzS9zIirKQOc0w.atlasv1.yNm6UvM6JsuiyNk8Eizjnw4uh0yyxyWcfy22xxfISxNFjisGLe4j63bkKlHsgfQbslc"
+	// token         string = ""
 	// projectId     string = "prj-GLKfaFAUJMGv1YQ3"
 	errMessage string = "invalid attribute\n\nName has already been taken"
 )
