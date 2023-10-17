@@ -22,7 +22,7 @@ jobs:
       
       - name: ReadDotEnv
         id: dotenv
-        uses: ./.github/actions/dotenv-action
+        uses: falti/dotenv-action@v1.0.4
 
       - name: Upload Configuration
         uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.4

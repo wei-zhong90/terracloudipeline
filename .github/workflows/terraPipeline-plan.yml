@@ -22,7 +22,8 @@ jobs:
 
       - name: ReadDotEnv
         id: dotenv
-        uses: ./.github/actions/dotenv-action
+        uses: falti/dotenv-action@v1.0.4
+
 
       - name: CheckWorkspace&Project
         uses: docker://weizhongcontinental/createworkspace:v1.0.1
