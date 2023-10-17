@@ -6,9 +6,8 @@ on:
       - main
 
 env:
-  TF_CLOUD_ORGANIZATION: "weitest"
+  TF_CLOUD_ORGANIZATION: "${{ secrets.TF_CLOUD_ORGANIZATION }}"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "REQ1234567"
   CONFIG_DIRECTORY: "./"
 
 jobs:
@@ -20,19 +19,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      
+      - name: ReadDotEnv
+        id: dotenv
+        uses: falti/dotenv-action@v1.0.4
 
       - name: Upload Configuration
         uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.4
         id: apply-upload
         with:
-          workspace: ${{ env.TF_WORKSPACE }}
+          workspace: ${{ steps.dotenv.outputs.workspace }}
           directory: ${{ env.CONFIG_DIRECTORY }}
 
       - name: Create Apply Run
         uses: hashicorp/tfc-workflows-github/actions/create-run@v1.0.4
         id: apply-run
         with:
-          workspace: ${{ env.TF_WORKSPACE }}
+          workspace: ${{ steps.dotenv.outputs.workspace }}
           configuration_version: ${{ steps.apply-upload.outputs.configuration_version_id }}
 
       - name: Apply
