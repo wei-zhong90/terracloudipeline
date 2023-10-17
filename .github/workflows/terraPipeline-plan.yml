@@ -6,7 +6,8 @@ on:
 env:
   TF_CLOUD_ORGANIZATION: "weitest"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "terraPipeline"
+  TF_WORKSPACE: "REQ1234567"
+  TF_PROJECT_ID: "prj-GLKfaFAUJMGv1YQ3"
   CONFIG_DIRECTORY: "./"
 
 jobs:
@@ -19,6 +20,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: CheckWorkspace&Project
+        uses: docker://weizhongcontinental/createworkspace:v1.0.1
+        with:
+          workspace_name: ${{ env.TF_WORKSPACE }}
+          project_id: ${{ env.TF_PROJECT_ID }}
+
 
       - name: Upload Configuration
         uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.4
