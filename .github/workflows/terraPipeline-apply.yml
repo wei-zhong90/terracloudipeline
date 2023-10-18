@@ -6,6 +6,8 @@ on:
       - '.github/**'
       - 'opa/**'
       - 'tools/**'
+      - 'backend/**'
+      - '.gitignore'
     branches:
       - main
 
