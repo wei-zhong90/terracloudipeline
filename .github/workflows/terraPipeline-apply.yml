@@ -2,6 +2,10 @@ name: "Terraform Apply"
 
 on:
   push:
+    paths-ignore:
+      - '.github/**'
+      - 'opa/**'
+      - 'tools/**'
     branches:
       - main
 
