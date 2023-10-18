@@ -1,6 +1,6 @@
 package terraform.tags
 
-import input.tfplan as tfplan
+import input.plan as tfplan
 
 
 required_tags = ["owner", "department"]
@@ -23,6 +23,13 @@ get_tags(resource) = labels {
     labels := resource.change.after.labels
 } else = tags {
     tags := resource.change.after.tags
+} else = na {
+	provider_name := get_basename(resource.provider_name)
+    "random" == provider_name
+    na := {
+        "owner": "wei",
+        "department": "it"
+    }
 } else = empty {
     empty := {}
 }

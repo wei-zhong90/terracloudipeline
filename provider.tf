@@ -1,4 +1,5 @@
-provider "aws" {
-}
-
 provider "archive" {}
+
+provider "aws" {}
+
+provider "random" {}
