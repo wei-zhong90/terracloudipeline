@@ -1,25 +1,4 @@
 .terraform
 .terraform.*
 
-# Distribution / packaging
-backend/.Python
-backend/env/
-backend/build/
-backend/develop-eggs/
-backend/dist/
-backend/downloads/
-backend/eggs/
-backend/.eggs/
-backend/lib/
-backend/lib64/
-backend/parts/
-backend/sdist/
-backend/var/
-backend/*.egg-info/
-backend/.installed.cfg
-backend/*.egg
-
-# Serverless directories
-backend/.serverless
-backend/node_modules
-backend/token.key
+/backend/node_modules
